@@ -1,6 +1,6 @@
 import { Box, Button, TextField } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 type RegisterForm = {
   name: string,
@@ -11,8 +11,10 @@ type RegisterForm = {
 
 const SignUpForm = () => {
   const { register, handleSubmit, formState: { errors }} = useForm<RegisterForm>();
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<RegisterForm> = (data) => {
     console.log(data);
+    navigate('email-verification');
   }
   return (
     <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
@@ -81,7 +83,7 @@ const SignUpForm = () => {
       </Box>
       <Button
         type="submit"
-        sx={{ mt: 3 }}
+        sx={{ mt: 3, py: 1.25 }}
         variant="contained"
         className="dark-btn"
       >

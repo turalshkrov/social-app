@@ -37,7 +37,7 @@ const LoginForm = () => {
         <Box sx={{ mt: 1, textAlign: "right", fontSize: 12 }}>Forget Password?</Box>
       </Link>
       <Button
-        sx={{ mt: 4 }}
+        sx={{ mt: 4, py: 1.25 }}
         type="submit"
         variant="contained"
         className="dark-btn"
