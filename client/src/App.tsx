@@ -1,16 +1,18 @@
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { Button, Container } from '@mui/material'
+import Login from './pages/login';
+import SignUp from './pages/signup';
 
 function App() {
 
   return (
-    <Container>
-      <Button variant='contained'>
-        Button
-      </Button>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/sign-up' element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
