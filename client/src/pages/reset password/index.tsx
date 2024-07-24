@@ -18,7 +18,7 @@ const ResetPassword = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column', m: '20vh auto', width: { xs: '90%', sm: '340px' } }}>
         <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
           <Box sx={{ mb: 6, textAlign: 'center', fontWeight: 'bold', fontSize: 'h4.fontSize' }}>
-            Social
+          Connectr
           </Box>
           <Box sx={{ fontWeight: 'bold', textAlign: 'center' }}>
             Reset Password

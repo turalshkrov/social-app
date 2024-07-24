@@ -17,7 +17,7 @@ const ForgotPassword = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column', m: '20vh auto', width: { xs: '90%', sm: '340px' } }}>
         <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
           <Box sx={{ mb: 6, textAlign: 'center', fontWeight: 'bold', fontSize: 'h4.fontSize' }}>
-            Social
+            Connectr
           </Box>
           <Box sx={{ fontWeight: 'bold', textAlign: 'center' }}>
             Forgot Password
@@ -38,7 +38,7 @@ const ForgotPassword = () => {
           <Button
             variant="contained"
             className="dark-btn"
-            sx={{ mt: 3, py: 1.25 }}
+            sx={{ mt: 2, py: 1.25 }}
             type="submit"
           >
             Send reset link

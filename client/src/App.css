@@ -3,7 +3,9 @@
 body {
   font-family: "Inter", sans-serif;
 }
-
+button {
+  box-shadow: none !important;
+}
 .dark-btn {
   background-color: #0c1024 !important;
 }
@@ -22,4 +24,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.search-input input{
+  padding: 8px;
 }

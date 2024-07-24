@@ -12,7 +12,8 @@ const EmailVerification = () => {
     const newOTP: string[] = [...otp];
     newOTP[index] = value.substring(value.length - 1);
     setOtp(newOTP);
-    setActiveOTPIndex(index + 1);
+    if (value) setActiveOTPIndex(index + 1);
+    else setActiveOTPIndex(index - 1);
   }
   const handleResendOTP = () => {
     setTimer({ min: 0, sec: 59, });
@@ -43,7 +44,7 @@ const EmailVerification = () => {
     <Container sx={{ px: { xs: 0, sm: 2 }}}>
       <Box sx={{ display: 'flex', flexDirection: 'column', m: '15vh auto', width: { xs: '90%', sm: '340px' } }}>
         <Box sx={{ mb: 6, textAlign: 'center', fontWeight: 'bold', fontSize: 'h4.fontSize' }}>
-          Social
+          Connectr
         </Box>
         <Box sx={{ fontWeight: 'bold', textAlign: 'center' }}>
           Enter verification code
@@ -74,14 +75,15 @@ const EmailVerification = () => {
               `${timer.min}:${timer.sec < 10 ? '0' + timer.sec : timer.sec}`
             }
           </Box>
-          <Box
-            sx={{ opacity: timer.sec === 0 ? 1 : 0, mt: 1, fontWeight: 'bold', cursor: 'pointer' }}
+          <Button
+            sx={{ fontWeight: 'bold', cursor: 'pointer', display: "block", m: "auto", mt: 1, color: colors.grey[800] }}
+            disabled={ timer.sec !== 0 }
             onClick={handleResendOTP}>
             Resend
-          </Box>
+          </Button>
         </Box>
         <Button
-          sx={{ mt: 6, py: 1.25 }}
+          sx={{ mt: 4, py: 1.25 }}
           className="dark-btn"
           variant="contained"
           onClick={handleVerify}>
