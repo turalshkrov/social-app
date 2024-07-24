@@ -33,7 +33,7 @@ const LoginForm = () => {
         error={!!errors.password}
         helperText={errors.password?.message}
       />
-      <Link to="/forget-password" className="link">
+      <Link to="/forgot-password" className="link">
         <Box sx={{ mt: 1, textAlign: "right", fontSize: 12 }}>Forget Password?</Box>
       </Link>
       <Button

@@ -35,7 +35,7 @@ const EmailVerification = () => {
       } else {
         setTimer(prev => ({ ...prev, sec: prev.sec - 1 }));
       }
-    }, 10)
+    }, 1000);
     return () => clearInterval(id);
   }, [timer.sec]);
 

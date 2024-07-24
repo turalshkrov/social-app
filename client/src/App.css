@@ -8,7 +8,7 @@ body {
   background-color: #0c1024 !important;
 }
 button {
-  text-transform: capitalize !important;
+  text-transform: none !important;
 }
 .link {
   color: #0c1024;
