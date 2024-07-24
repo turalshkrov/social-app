@@ -23,40 +23,44 @@ const Header = () => {
   }
 
   return (
-    <Container>
-      <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "space-between" }, alignItems: "center", py: 2 }}>
-        <Box sx={{ fontWeight: "bold", fontSize: 20 }}>
-          <Link to="/" className='link'>
-            Connectr
-          </Link>
-        </Box>
-        <form onSubmit={handleSubmit} style={{ width: '50%' }}>
-          <TextField
-            className='search-input'
-            sx={{ width: '100%', display: { xs: 'none', md: 'block' } }}
-            placeholder='Search'
-            value={searchKey}
-            onChange={handleChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              ),
-              style: { width: '100%' }
-            }}
-          />
-        </form>
-        <Box
-          sx={{ alignItems: "center", display: { xs: 'none', md: 'flex', cursor: 'pointer' } }}
-          onClick={() => dispatch(setIsOpen({ id: "logout", isOpen: true }))}>
-          <Box sx={{ mr: 2 }}>
-            Logout
+    <header className='header'>
+      <Container>
+        <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "space-between" }, alignItems: "center", py: 2 }}>
+          <Box sx={{ fontWeight: "bold", fontSize: 20 }}>
+            <Link to="/" className='link'>
+              Connectr
+            </Link>
           </Box>
-          <PersonOutline />
+          <Box sx={{ width: '40%', display: { xs: 'none', md: 'block' }} }>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                className='search-input'
+                sx={{ width: '100%'}}
+                placeholder='Search'
+                value={searchKey}
+                onChange={handleChange}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  ),
+                  style: { width: '100%' }
+                }}
+              />
+            </form>
+          </Box>
+          <Box
+            sx={{ alignItems: "center", display: { xs: 'none', md: 'flex', cursor: 'pointer' } }}
+            onClick={() => dispatch(setIsOpen({ id: "logout", isOpen: true }))}>
+            <Box sx={{ mr: 2 }}>
+              Logout
+            </Box>
+            <PersonOutline />
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </header>
   )
 }
 
