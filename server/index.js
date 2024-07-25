@@ -17,7 +17,13 @@ mongoose.connect(process.env.DATABASE_SERVER_URL)
 
 app.get('/', (req, res) => {
   res.send('Welcome to API');
-})
+});
+
+const authRouter = require('./routers/Auth');
+const userRouter = require('./routers/Users');
+
+app.use('/auth', authRouter);
+app.use('/users', userRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => { console.log(`server running on port ${PORT}`) });

@@ -19,15 +19,20 @@ const User = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    select: false,
   },
   avatar: {
     type: String,
+  },
+  active: {
+    type: Boolean,
+    default: false,
   },
   createdAt: {
     type: Date,
     default: Date.now(),
   }
-}, { collection: 'User', versionKey: false });
+}, { collection: 'Users', versionKey: false });
 
 User.pre('save', async function(next) {
   if (this.isModified('password')) {
