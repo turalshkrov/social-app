@@ -31,7 +31,7 @@ const Header = () => {
               Connectr
             </Link>
           </Box>
-          <Box sx={{ width: '40%', display: { xs: 'none', md: 'block' }} }>
+          <Box sx={{ width: '50%', display: { xs: 'none', md: 'block' }} }>
             <form onSubmit={handleSubmit}>
               <TextField
                 className='search-input'

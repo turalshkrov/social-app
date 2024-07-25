@@ -2,7 +2,6 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #fafbff !important;
 }
 button {
   box-shadow: none !important;
@@ -16,6 +15,13 @@ button {
 .link {
   color: #0c1024;
   text-decoration: none;
+}
+.navlink {
+  color: #757575;
+  text-decoration: none;
+}
+.navlink.active {
+  color: #0c1024;
 }
 .sign-up-form {
   display: flex;

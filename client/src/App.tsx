@@ -1,5 +1,6 @@
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css'
+import { Container, Grid } from '@mui/material';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Login from './pages/login';
 import SignUp from './pages/signup';
 import EmailVerification from './pages/email verification';
@@ -9,7 +10,11 @@ import Feed from './pages/feed';
 import Modals from './modals';
 import Header from './components/header';
 import Navbar from './components/navbar';
-import { Container, Grid } from '@mui/material';
+import Messages from './pages/messages';
+import Search from './pages/search';
+import Notifications from './pages/notification';
+import Profile from './pages/profile';
+import SideBar from './components/side bar';
 
 function App() {
 
@@ -21,18 +26,31 @@ function App() {
           <>
             <Header />
             <Container>
-              <Grid container spacing={2}>
+              <Grid container>
+                <Navbar />
+                <Outlet />
+                <SideBar />
+              </Grid>
+            </Container>
+          </>
+        )}>
+          <Route path='/' element={<Feed />} />
+        </Route>
+        <Route element={(
+          <>
+            <Header />
+            <Container>
+              <Grid container>
                 <Navbar />
                 <Outlet />
               </Grid>
             </Container>
           </>
         )}>
-          <Route path='/' element={<Feed />} />
-          <Route path='/messages' element={"Messages"} />
-          <Route path='/search' element={"Search"} />
-          <Route path='/notifications' element={"Notification"} />
-          <Route path='/profile' element={"Profile"} />
+          <Route path='/messages' element={<Messages />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/notifications' element={<Notifications />} />
+          <Route path='/profile' element={<Profile />} />
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Feed />} />
