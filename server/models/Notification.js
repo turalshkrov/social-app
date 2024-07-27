@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const Notification = new mongoose.Schema({
-  user: { // Reference to the user receiving the notification
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
   },
-  actor: { // Reference to the user who triggered the notification
+  actor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,

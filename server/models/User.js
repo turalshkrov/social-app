@@ -24,13 +24,25 @@ const User = new mongoose.Schema({
   avatar: {
     type: String,
   },
-  active: {
+  isActive: {
     type: Boolean,
     default: false,
   },
   createdAt: {
     type: Date,
     default: Date.now(),
+  },
+  otpCode: {
+    type: String,
+  },
+  otpExpiry: {
+    type: Date,
+  },
+  resetPasswordToken: {
+    type: String,
+  },
+  resetPasswordExpires: {
+    type: Date,
   }
 }, { collection: 'Users', versionKey: false });
 
