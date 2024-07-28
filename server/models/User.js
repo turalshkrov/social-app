@@ -34,16 +34,35 @@ const User = new mongoose.Schema({
   },
   otpCode: {
     type: String,
+    select: false,
   },
   otpExpiry: {
     type: Date,
+    select: false,
   },
   resetPasswordToken: {
     type: String,
+    select: false,
   },
   resetPasswordExpires: {
     type: Date,
-  }
+    select: false,
+  },
+  following: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    default: [],
+  }],
+  followers: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'User',
+    default: [],
+  }],
+  posts: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'Post',
+    default: [],
+  }]
 }, { collection: 'Users', versionKey: false });
 
 User.pre('save', async function(next) {

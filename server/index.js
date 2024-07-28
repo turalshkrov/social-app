@@ -21,9 +21,13 @@ app.get('/', (req, res) => {
 
 const authRouter = require('./routers/Auth');
 const userRouter = require('./routers/Users');
+const postRouter = require('./routers/Posts');
+const commentRouter = require('./routers/Comments');
 
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
+app.use('/posts', postRouter);
+app.use('/comments', commentRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => { console.log(`server running on port ${PORT}`) });
