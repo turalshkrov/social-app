@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <Grid 
       item md={3}
-      sx={{ backgroundColor: '#FFF', mt: 4, bottom: 0, left: 0, position: { xs: 'fixed', md: 'static' }, borderRadius: { md: 2 }, p: 2, width: '100%' }}
+      sx={{ backgroundColor: '#FFF', mt: 4, bottom: 0, left: 0, position: { xs: 'fixed', md: 'static' }, borderRadius: { md: 2 }, p: 2, width: '100%', height: 'min-content' }}
       className="border">
       <List sx={{ display: { xs: 'none', md: 'block' }}}>
         {
