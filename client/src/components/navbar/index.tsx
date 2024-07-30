@@ -27,7 +27,7 @@ const Navbar = () => {
         top: { md: '104px' },
         position: { xs: 'fixed', md: 'sticky' },
         borderRadius: { md: 2 },
-        p: { xs: 1, md: 2 },
+        p: 2,
         width: { xs: '100%', md: '25%' },
         height: 'min-content' 
       }}

@@ -8,6 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentBox from "../comment";
 import moment from "moment";
 import PostMenu from "../post menu";
+import CommentInputBox from "../comment input";
 
 interface PostCardProps {
   data: PostType,
@@ -64,6 +65,7 @@ const PostCard: React.FC<PostCardProps> = ({ data }) => {
       {
         showComment &&
         <Box sx={{ mt: 4 }}>
+          <CommentInputBox />
           {
             data.comments.map(comment => {
               return <CommentBox data={comment} key={comment._id} />
