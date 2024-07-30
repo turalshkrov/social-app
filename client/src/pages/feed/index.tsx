@@ -32,9 +32,26 @@ const data: PostType[] = [{
     },
     postId: "1",
     content: "Fantastic post! Your content always brings a smile to my face. Keep up the great work! 👏 ",
-    createdAt: new Date('12.12.2024')
+    createdAt: new Date('12.12.2023')
+  },
+  {
+    _id: "2",
+    author: {
+      _id: '1',
+      name: "David Martinez",
+      username: "david",
+      email: "remy@mail.com",
+      avatar: "https://mui.com/static/images/avatar/3.jpg",
+      createdAt: new Date('12.12.2024'),
+      following: [],
+      followers: [],
+      posts: []
+    },
+    postId: "1",
+    content: " Your positivity is contagious! Thanks for brightening up my feed. Have a fantastic day!",
+    createdAt: new Date('12.12.2023')
   }],
-  createdAt: new Date('12.12.2024'),
+  createdAt: new Date('12.12.2023'),
 },{
   _id: '2',
   author: {

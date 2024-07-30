@@ -17,8 +17,20 @@ const navList = [
 const Navbar = () => {
   return (
     <Grid 
-      item md={3}
-      sx={{ zIndex: 99, backgroundColor: '#FFF', mt: 4, bottom: 0, left: 0, position: { xs: 'fixed', md: 'static' }, borderRadius: { md: 2 }, p: 2, width: '100%', height: 'min-content' }}
+      item
+      sx={{
+        zIndex: 99,
+        backgroundColor: '#FFF',
+        mt: 4,
+        bottom: { xs: 0, md: 'inherit' },
+        left: { xs: 0, md: 'inherit' },
+        top: { md: '104px' },
+        position: { xs: 'fixed', md: 'sticky' },
+        borderRadius: { md: 2 },
+        p: { xs: 1, md: 2 },
+        width: { xs: '100%', md: '25%' },
+        height: 'min-content' 
+      }}
       className="border">
       <List sx={{ display: { xs: 'none', md: 'block' }}}>
         {

@@ -39,6 +39,10 @@ input::-webkit-inner-spin-button {
 header.header {
   background-color: #FFF !important;
   border-bottom: 1px solid #eef2f6;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
 }
 
 .border {

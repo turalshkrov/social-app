@@ -26,7 +26,7 @@ function App() {
           <>
             <Header />
             <Container>
-              <Grid container>
+              <Grid container sx={{ mt: 9 }}>
                 <Navbar />
                 <Outlet />
                 <SideBar />
@@ -40,7 +40,7 @@ function App() {
           <>
             <Header />
             <Container>
-              <Grid container>
+              <Grid container sx={{ mt: 9 }}>
                 <Navbar />
                 <Outlet />
               </Grid>

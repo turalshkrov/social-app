@@ -8,6 +8,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
+import BlockOutlinedIcon from '@mui/icons-material/BlockOutlined';
 
 const ITEM_HEIGHT = 48;
 
@@ -29,10 +30,9 @@ export default function PostMenu() {
         aria-controls={open ? 'long-menu' : undefined}
         aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
-        size='small'
         onClick={handleClick}
       >
-        <MoreHoriz sx={{ fontSize: 20 }} />
+        <MoreHoriz/>
       </IconButton>
       <Menu
         id="long-menu"
@@ -65,9 +65,11 @@ export default function PostMenu() {
           <FlagOutlinedIcon sx={{ mr: 1, fontSize: 18 }} />
           Report the post
         </MenuItem>
+        <MenuItem sx={{ color: colors.grey[700], fontSize: 15 }} onClick={handleClose}>
+          <BlockOutlinedIcon sx={{ mr: 1, fontSize: 18 }} />
+          Block the user
+        </MenuItem>
       </Menu>
     </div>
   );
 }
-
-

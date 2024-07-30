@@ -8,7 +8,7 @@ interface CommentBoxProps {
 }
 const CommentBox: React.FC<CommentBoxProps> = ({ data }) => {
   return (
-    <Box sx={{ mt: 3, ml: 3 }}>
+    <Box sx={{ mt: 2, ml: 3, backgroundColor: '#F1F4F9', p: 2, borderRadius: 2 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Link to={`/profiles/${data.author._id}`}>
@@ -18,7 +18,7 @@ const CommentBox: React.FC<CommentBoxProps> = ({ data }) => {
             <Link className="link" to={`/profiles/${data.author._id}`}>
               <Box sx={{ fontWeight: 'bold', display: 'inline', fontSize: 14 }}>{data.author.username}</Box>
             </Link>
-            <Box sx={{ fontSize: 14 }}>{data.author.name}</Box>
+            <Box sx={{ fontSize: 13, color: colors.grey[700] }}>{data.author.name}</Box>
           </Box>
         </Box>
         <Box sx={{ color: colors.grey[700], fontSize: 13 }}>

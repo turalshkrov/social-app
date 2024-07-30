@@ -25,7 +25,7 @@ const PostCard: React.FC<PostCardProps> = ({ data }) => {
   }
 
   return (
-  <Box sx={{ mb: 6, p: { md: 2 } }}>
+    <Box sx={{ mb: 6, p: { md: 2 } }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Link to={`/profiles/${data.author._id}`}>
@@ -35,7 +35,7 @@ const PostCard: React.FC<PostCardProps> = ({ data }) => {
             <Link className="link" to={`/profiles/${data.author._id}`}>
               <Box sx={{ fontWeight: 'bold', display: 'inline', fontSize: 14 }}>{data.author.username}</Box>
             </Link>
-            <Box sx={{ fontSize: 14 }}>{data.author.name}</Box>
+            <Box sx={{ fontSize: 13, color: colors.grey[700] }}>{data.author.name}</Box>
           </Box>
         </Box>
         <Box sx={{ color: colors.grey[700], fontSize: 13, display: 'flex', flexDirection: 'column', alignItems: 'end' }}>
@@ -63,9 +63,13 @@ const PostCard: React.FC<PostCardProps> = ({ data }) => {
       </Box>
       {
         showComment &&
-        data.comments.map(comment => {
-          return <CommentBox data={comment} key={comment._id}/>
-        })
+        <Box sx={{ mt: 4 }}>
+          {
+            data.comments.map(comment => {
+              return <CommentBox data={comment} key={comment._id} />
+            })
+          }
+        </Box>
       }
     </Box>
   )
