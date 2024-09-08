@@ -12,7 +12,7 @@ export const ResetPassword = () => {
     };
     return (
         <Row justify="center" className="p-4 items-center h-screen">
-            <Col span={24} md={12} lg={10} xl={8} xxl={5} className="mb-20">
+            <Col span={24} md={12} lg={9} xl={7} xxl={5} className="mb-20">
                 <Logo />
                 <Col className="text-center mt-20">
                     <Typography.Title level={4} className="!mb-6">

@@ -7,15 +7,21 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "antd/es/form/Form";
+import { useMutation } from "@tanstack/react-query";
 import { Checkbox, Col, Form, Row, Tooltip, Typography } from "antd";
 
+import { checkUsername } from "@/api";
 import { Button, Input, Logo } from "@/components/index";
 
 export const Signup = () => {
+    const { mutate, isPending, isError, isSuccess } = useMutation({
+        mutationFn: checkUsername,
+        mutationKey: ["checkUsername"],
+    });
+
     const [form] = useForm();
     const { getFieldsValue, getFieldValue } = form;
 
-    const [usernameStatus, setUsernameStatus] = useState("");
     const [isPrivacyAccepted, setIsPrivacyAccepted] = useState(false);
 
     const handleSubmit = () => {
@@ -27,18 +33,14 @@ export const Signup = () => {
 
     const handleSearch = () => {
         const username = getFieldValue("username");
-        if (username.match(/^[a-zA-Z]+$/)) {
-            console.log(username);
-            setUsernameStatus("loading");
-            setTimeout(() => {
-                setUsernameStatus("ok");
-            }, 2000);
+        if (username.length >= 3) {
+            mutate({ username });
         }
     };
 
     return (
         <Row justify="center" className="p-4 items-center h-screen">
-            <Col span={24} md={12} lg={10} xl={8} xxl={5} className="mb-20">
+            <Col span={24} md={12} lg={9} xl={7} xxl={5} className="mb-20">
                 <Logo />
                 <Form form={form} className="mt-20">
                     <Form.Item name="name">
@@ -54,20 +56,21 @@ export const Signup = () => {
                                     "Username and must conatin only English letters",
                             },
                         ]}
+                        validateStatus={isError ? "error" : ""}
                     >
                         <Input
                             placeholder="Username"
                             onChange={handleSearch}
                             suffix={
-                                usernameStatus === "loading" ? (
+                                isPending ? (
                                     <LoadingOutlined />
-                                ) : usernameStatus === "error" ? (
+                                ) : isError ? (
                                     <Tooltip title="Username is already taken">
                                         <ExclamationCircleOutlined
                                             style={{ color: "red" }}
                                         />
                                     </Tooltip>
-                                ) : usernameStatus === "ok" ? (
+                                ) : isSuccess ? (
                                     <Tooltip title="OK">
                                         <CheckOutlined
                                             style={{ color: "green" }}
