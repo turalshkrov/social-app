@@ -22,3 +22,12 @@
         }
     }
 }
+
+.ant-modal-cancel-btn {
+    color: #10152f;
+
+    &:hover {
+        color: #0c1024 !important;
+        border-color: #0c1024 !important;
+    }
+}
