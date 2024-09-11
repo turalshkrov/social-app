@@ -2,10 +2,17 @@ a {
     &:hover {
         transition: 0 !important;
         color: inherit !important;
-        text-decoration: underline;
     }
 }
 
 .ant-statistic-content-value {
     font-size: 1.25rem;
+}
+
+a.navlink > * {
+    color: #4b5669;
+}
+
+a.navlink.active > * {
+    color: #0c1024;
 }

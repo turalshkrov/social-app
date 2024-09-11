@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import {
     EmailVerification,
@@ -7,37 +7,57 @@ import {
     ResetPassword,
     Signup,
 } from "@/pages";
-import ScrollToTop from "@/utils/ScrollToTop";
+import { MainLayout } from "@/components";
 
 const router = createBrowserRouter([
     {
+        path: "login",
+        element: <Login />,
+    },
+    {
+        path: "signup",
+        element: <Signup />,
+    },
+    {
+        path: "forgot-password",
+        element: <ForgotPassword />,
+    },
+    {
+        path: "reset-password",
+        element: <ResetPassword />,
+    },
+    {
+        path: "verify-email",
+        element: <EmailVerification />,
+    },
+    {
         path: "/",
-        element: (
-            <>
-                <ScrollToTop />
-                <Outlet />
-            </>
-        ),
+        element: <MainLayout />,
         children: [
             {
-                path: "login",
-                element: <Login />,
+                index: true,
+                path: "/",
+                element: "Home",
             },
             {
-                path: "signup",
-                element: <Signup />,
+                path: "/home",
+                element: "Home",
             },
             {
-                path: "forgot-password",
-                element: <ForgotPassword />,
+                path: "messages",
+                element: "Messages",
             },
             {
-                path: "reset-password",
-                element: <ResetPassword />,
+                path: "search",
+                element: "Search",
             },
             {
-                path: "verify-email",
-                element: <EmailVerification />,
+                path: "notifications",
+                element: "Notifications",
+            },
+            {
+                path: "profile",
+                element: "Profile",
             },
         ],
     },
