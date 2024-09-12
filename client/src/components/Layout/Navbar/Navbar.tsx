@@ -42,9 +42,10 @@ function Navbar() {
     const screens = useBreakpoint();
 
     return (
-        <Col span={24} md={8} lg={6} className="md:p-8">
+        <Col span={24} md={8} xl={6} className="md:p-4 2xl:p-8">
             {screens.md ? (
                 <List
+                    className="sticky w-full top-[106px]"
                     bordered
                     dataSource={navbarItems}
                     renderItem={(item) => (
@@ -66,10 +67,14 @@ function Navbar() {
             ) : (
                 <Flex
                     justify="space-around"
-                    className="py-4 items-center fixed bottom-0 left-0 w-full border border-stale-800"
+                    className="py-4 items-center fixed bottom-0 left-0 w-full border border-stale-800 z-50"
                 >
                     {navbarItems.map((item) => (
-                        <NavLink to={item.link} className="navlink">
+                        <NavLink
+                            to={item.link}
+                            className="navlink"
+                            key={item.link}
+                        >
                             <Typography.Text className="text-lg">
                                 {item.icon}
                             </Typography.Text>

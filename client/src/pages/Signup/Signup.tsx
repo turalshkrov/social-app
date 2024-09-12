@@ -12,7 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Checkbox, Col, Form, Row, Tooltip, Typography } from "antd";
 
 import { checkUsername, createUser } from "@/api";
-import { Button, Container, Input, Logo } from "@/components";
+import { Button, Container, Input, Logo, PasswordInput } from "@/components";
 
 export const Signup = () => {
     const {
@@ -125,8 +125,7 @@ export const Signup = () => {
                                 },
                             ]}
                         >
-                            <Input
-                                inputType="password"
+                            <PasswordInput
                                 placeholder="Password"
                                 autoComplete="new-password"
                             />

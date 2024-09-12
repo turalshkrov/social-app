@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "antd/es/form/Form";
 import { Col, Form, Row, Typography } from "antd";
 
-import { Button, Container, Input, Logo } from "@/components";
+import { Button, Container, Input, Logo, PasswordInput } from "@/components";
 
 export const Login = () => {
     const [form] = useForm();
@@ -21,10 +21,7 @@ export const Login = () => {
                             <Input inputMode="email" placeholder="Email" />
                         </Form.Item>
                         <Form.Item name="password">
-                            <Input
-                                inputType="password"
-                                placeholder="Password"
-                            />
+                            <PasswordInput placeholder="Password" />
                         </Form.Item>
                         <Col className="text-right mb-6">
                             <Link to="/forgot-password">

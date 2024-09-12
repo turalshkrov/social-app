@@ -1,7 +1,7 @@
 .ant-input-outlined {
     border-color: #c4c4c4;
     color: #707988;
-
+    outline: none;
     &:focus,
     &:active,
     &:focus-within,
@@ -26,4 +26,14 @@ input:-webkit-autofill:active {
     padding: 1rem;
     font-size: 20px;
     font-weight: bold;
+}
+
+.ant-input-group-addon > * {
+    border-color: #c4c4c4;
+    color: #707988;
+
+    &:active {
+        border-color: #c4c4c4;
+        color: #707988;
+    }
 }

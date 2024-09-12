@@ -1,7 +1,7 @@
 import { useForm } from "antd/es/form/Form";
 import { Col, Form, Row, Typography } from "antd";
 
-import { Input, Logo, Button, Container } from "@/components";
+import { Logo, Button, Container, PasswordInput } from "@/components";
 
 export const ResetPassword = () => {
     const [form] = useForm();
@@ -31,8 +31,7 @@ export const ResetPassword = () => {
                                 },
                             ]}
                         >
-                            <Input
-                                inputType="password"
+                            <PasswordInput
                                 placeholder="New Password"
                                 autoComplete="new-password"
                             />
@@ -47,8 +46,7 @@ export const ResetPassword = () => {
                                 },
                             ]}
                         >
-                            <Input
-                                inputType="password"
+                            <PasswordInput
                                 placeholder="Confirm Password"
                                 autoComplete="new-password"
                             />

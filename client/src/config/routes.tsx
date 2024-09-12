@@ -8,6 +8,7 @@ import {
     Signup,
 } from "@/pages";
 import { MainLayout } from "@/components";
+import { Row } from "antd";
 
 const router = createBrowserRouter([
     {
@@ -37,11 +38,11 @@ const router = createBrowserRouter([
             {
                 index: true,
                 path: "/",
-                element: "Home",
+                element: <Row className="h-screen px-4 py-8">Home</Row>,
             },
             {
                 path: "/home",
-                element: "Home",
+                element: <Row className="h-screen px-4 py-96">Home</Row>,
             },
             {
                 path: "messages",

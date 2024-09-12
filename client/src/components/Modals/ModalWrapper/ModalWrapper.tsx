@@ -6,7 +6,13 @@ import { modalIsOpenSelector } from "@/store/selectors";
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
 import { iModalProps } from "./iModalWrapper";
 
-const Modal = ({ id, children, ...rest }: iModalProps) => {
+const Modal = ({
+    id,
+    children,
+    closeIcon = null,
+    centered = true,
+    ...rest
+}: iModalProps) => {
     const dispatch = useAppDispatch();
     const isOpen = useAppSelector((state) => modalIsOpenSelector(state, id));
 
@@ -14,7 +20,7 @@ const Modal = ({ id, children, ...rest }: iModalProps) => {
         dispatch(
             setIsOpen({
                 id,
-                setIsOpen: false,
+                isOpen: false,
             })
         );
     };
@@ -22,7 +28,8 @@ const Modal = ({ id, children, ...rest }: iModalProps) => {
     return createPortal(
         <AntModal
             open={isOpen}
-            closeIcon={null}
+            closeIcon={closeIcon}
+            centered={centered}
             onCancel={handleCancel}
             cancelButtonProps={{ className: "rounded ant-modal-cancel-btn" }}
             okButtonProps={{ className: "rounded" }}

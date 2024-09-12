@@ -13,7 +13,7 @@ const LogOutModal = () => {
         dispatch(
             setIsOpen({
                 id: "logout",
-                setIsOpen: false,
+                isOpen: false,
             })
         );
     };
