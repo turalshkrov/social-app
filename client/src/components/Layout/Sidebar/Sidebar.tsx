@@ -25,7 +25,7 @@ const data = [
 
 function Sidebar() {
     return (
-        <Col className="md:p-4 2xl:p-8 " span={0} xl={6}>
+        <Col className="md:px-4 2xl:px-8 py-8" span={0} xl={6}>
             <List
                 className="sticky w-full top-[106px]"
                 header={

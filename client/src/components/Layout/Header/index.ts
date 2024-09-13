@@ -1,2 +1,1 @@
-export { default as Header } from './Header';
-export * from './iHeader';
+export { default as Header } from "./Header";

@@ -1,13 +1,11 @@
-import cn from "classnames";
 import { Col, Row, Typography } from "antd";
-
-import { iHeaderProps } from "./iHeader";
-import { Button, Container, SearchInput } from "@/components/";
 import { UserOutlined } from "@ant-design/icons";
+
 import { useAppDispatch } from "@/hooks/hooks";
 import { setIsOpen } from "@/store/slices/ModalSlice";
+import { Button, Container, SearchInput } from "@/components/";
 
-function Header({ className }: iHeaderProps) {
+function Header() {
     const dispatch = useAppDispatch();
     const handleOpenLogoutModal = () => {
         dispatch(
@@ -18,7 +16,7 @@ function Header({ className }: iHeaderProps) {
         );
     };
     return (
-        <Container className={cn(className, "py-4 sticky top-0")}>
+        <Container className="py-4 sticky top-0 z-50">
             <Row align="middle" justify="start">
                 <Col span={24} md={8} xl={6} className="md:pl-4 xl:pl-8">
                     <Typography.Title

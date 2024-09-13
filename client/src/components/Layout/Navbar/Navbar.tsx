@@ -1,38 +1,39 @@
-import { Col, List, Typography, Grid, Flex } from "antd";
-import { MdOutlineNotifications } from "react-icons/md";
 import {
-    HomeOutlined,
-    MailOutlined,
-    SearchOutlined,
-    UserOutlined,
-} from "@ant-design/icons";
+    MdHomeFilled,
+    MdNotifications,
+    MdPerson,
+    MdSearch,
+    MdSend,
+} from "react-icons/md";
+import { Col, List, Typography, Grid, Flex } from "antd";
+
 import { NavLink } from "react-router-dom";
 
 const navbarItems = [
     {
         label: "Home",
         link: "/home",
-        icon: <HomeOutlined />,
+        icon: <MdHomeFilled />,
     },
     {
         label: "Messages",
         link: "/messages",
-        icon: <MailOutlined />,
+        icon: <MdSend />,
     },
     {
         label: "Search",
         link: "/search",
-        icon: <SearchOutlined />,
+        icon: <MdSearch />,
     },
     {
         label: "Notifications",
         link: "/notifications",
-        icon: <MdOutlineNotifications />,
+        icon: <MdNotifications />,
     },
     {
         label: "Profile",
         link: "/profile",
-        icon: <UserOutlined />,
+        icon: <MdPerson />,
     },
 ];
 
@@ -42,10 +43,10 @@ function Navbar() {
     const screens = useBreakpoint();
 
     return (
-        <Col span={24} md={8} xl={6} className="md:p-4 2xl:p-8">
+        <Col span={24} md={8} xl={6} className="md:px-4 2xl:px-8 py-8">
             {screens.md ? (
                 <List
-                    className="sticky w-full top-[106px]"
+                    className="sticky w-full top-[106px] z-50 navbar-container"
                     bordered
                     dataSource={navbarItems}
                     renderItem={(item) => (
@@ -57,7 +58,7 @@ function Navbar() {
                                 <Typography.Text className="text-lg">
                                     {item.icon}
                                 </Typography.Text>
-                                <Typography.Text className="ml-2 text-base hidden md:block">
+                                <Typography.Text className="ml-4 text-base hidden md:block">
                                     {item.label}
                                 </Typography.Text>
                             </NavLink>
@@ -67,7 +68,7 @@ function Navbar() {
             ) : (
                 <Flex
                     justify="space-around"
-                    className="py-4 items-center fixed bottom-0 left-0 w-full border border-stale-800 z-50"
+                    className="py-4 items-center fixed bottom-0 left-0 w-full border border-stale-800  z-50 navbar-container"
                 >
                     {navbarItems.map((item) => (
                         <NavLink
