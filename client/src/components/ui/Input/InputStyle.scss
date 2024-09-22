@@ -1,39 +1,41 @@
 .ant-input-outlined {
-    border-color: #c4c4c4;
-    color: #707988;
-    outline: none;
-    &:focus,
-    &:active,
-    &:focus-within,
-    &:focus-visible,
-    &:hover {
-        border-color: #707988;
-    }
+	border-color: #c4c4c4;
+	color: #707988;
+	outline: none;
+	&:focus,
+	&:active,
+	&:focus-within,
+	&:focus-visible,
+	&:hover {
+		border-color: #707988;
+		outline: none;
+		box-shadow: none;
+	}
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-    -webkit-background-clip: text;
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+	-webkit-background-clip: text;
 }
 
 .ant-otp-input {
-    border-color: #c4c4c4;
-    width: 56px;
-    height: 56px;
-    padding: 1rem;
-    font-size: 20px;
-    font-weight: bold;
+	border-color: #c4c4c4;
+	width: 56px;
+	height: 56px;
+	padding: 1rem;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .ant-input-group-addon > * {
-    border-color: #c4c4c4;
-    color: #707988;
+	border-color: #c4c4c4;
+	color: #707988;
 
-    &:active {
-        border-color: #c4c4c4;
-        color: #707988;
-    }
+	&:active {
+		border-color: #c4c4c4;
+		color: #707988;
+	}
 }

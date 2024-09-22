@@ -1,22 +1,40 @@
 a {
-    &:hover {
-        transition: 0 !important;
-        color: inherit !important;
-    }
+	&:hover {
+		transition: 0 !important;
+		color: inherit !important;
+	}
 }
 
 .ant-statistic-content-value {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 a.navlink > * {
-    color: #4b5669;
+	color: #4b5669;
 }
 
 a.navlink.active > * {
-    color: #0c1024;
+	color: #0c1024;
+}
+
+body {
+	background-color: #ecf0f5;
 }
 
 .navbar-container {
-    background-color: #fff;
+	background-color: #fff;
+}
+
+.bg-white {
+	background-color: #fff;
+}
+
+.ant-card {
+	border: 1px solid #d9d9d9;
+}
+
+@media screen and (max-width: 768px) {
+	.ant-card-body {
+		padding: 1rem !important;
+	}
 }

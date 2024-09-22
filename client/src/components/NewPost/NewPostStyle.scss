@@ -1,0 +1,17 @@
+.new-post-form {
+	width: calc(100% - 3rem);
+	padding-left: 1rem;
+}
+.new-post-input {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #c4c4c4;
+}
+
+.post-content {
+	border-top: 1px solid #c4c4c4;
+}
+
+.post-submit-btn {
+	background-color: #4c68d5;
+}

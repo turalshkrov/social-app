@@ -3,3 +3,4 @@ export * from "./Signup/Signup";
 export * from "./ForgotPassword/ForgotPassword";
 export * from "./EmailVerification/EmailVerification";
 export * from "./ResetPassword/ResetPassword";
+export * from './Home';
