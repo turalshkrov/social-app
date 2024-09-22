@@ -7,7 +7,7 @@ import cn from "classnames";
 import moment from "moment";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Avatar, Card, Flex, Row, Space, Typography } from "antd";
+import { Avatar, Card, Flex, Image, Row, Space, Typography } from "antd";
 
 import { iPostProps } from "./iPost";
 import { PostContextMenu } from "./components";
@@ -40,8 +40,14 @@ function Post({ className, data }: iPostProps) {
 				</Space>
 			</Row>
 
-			<Row className=" p-4">
+			<Row className="">
 				<Text className="text-justify">{data.content}</Text>
+			</Row>
+
+			<Row className="w-full py-4">
+				{data.media && (
+					<Image src={data.media} width="100%" className="rounded-md" />
+				)}
 			</Row>
 
 			<Row justify="space-between" className="py-4">

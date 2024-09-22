@@ -67,9 +67,9 @@ function PostContextMenu({ className, data }: iPostContextMenuProps) {
 	];
 	return (
 		<Dropdown
-			className={cn(className)}
+			className={cn(className, "ml-4 md:ml-0")}
 			menu={{ items }}
-			placement="bottom"
+			placement="bottomLeft"
 			trigger={["click"]}
 		>
 			<FiMoreHorizontal size={20} className="cursor-pointer" />

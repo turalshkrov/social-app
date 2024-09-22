@@ -1,7 +1,7 @@
 import cn from "classnames";
 
 import { useForm } from "antd/es/form/Form";
-import { Avatar, Card, Form, Input, Row, Upload } from "antd";
+import { Avatar, Card, Form, Input, Row, Space, Upload } from "antd";
 
 import { Button } from "../ui";
 import { MdImage } from "react-icons/md";
@@ -34,9 +34,10 @@ function NewPost({ className }: iNEWPOSTProps) {
 					<Row className="flex justify-between w-full items-center">
 						<Form.Item name="media" className="m-0">
 							<Upload beforeUpload={() => false} maxCount={1}>
-								<Button type="link" icon={<MdImage />}>
+								<Space className="cursor-pointer">
+									<MdImage />
 									Add Media
-								</Button>
+								</Space>
 							</Upload>
 						</Form.Item>
 						<Button size="middle" shape="round" onClick={handleSubmit}>

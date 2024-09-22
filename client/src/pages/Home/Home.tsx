@@ -18,6 +18,7 @@ const data: iPost = {
 	},
 	content:
 		"In today's fast-paced, digitally driven world, digital marketing is not just a strategy. it's a necessity for businesses of all sizes. 📈",
+	media: "https://picsum.photos/300/200",
 	likes: [],
 	comments: [],
 	createdAt: new Date("2022-01-01"),

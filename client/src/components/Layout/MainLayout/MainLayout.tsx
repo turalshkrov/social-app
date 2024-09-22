@@ -9,7 +9,7 @@ function MainLayout() {
 			<Container>
 				<Row>
 					<Navbar />
-					<Col span={24} md={16} xl={12} className="px-2 md:px-4">
+					<Col span={24} md={16} xl={12} className="px-4 pt-4 md:py-8 pb-16">
 						<Outlet />
 					</Col>
 					<Sidebar />
